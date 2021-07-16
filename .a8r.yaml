@@ -3,3 +3,7 @@ k8s_config:
   cluster_info:
     cluster_id: "12344455"
     cluster_name: "Production"
+- manifest_path: manifests/test
+  cluster_info:
+    cluster_id: "12344455324"
+    cluster_name: "Staging"
