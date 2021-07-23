@@ -1,0 +1,24 @@
+apiVersion: x.getambassador.io/v3alpha1
+kind: AmbassadorMapping
+metadata:
+  name: conflicter
+  namespace: default
+spec:
+  hostname: "*"
+  prefix: /backend/
+  service: conflicter
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: conflicter
+  namespace: default
+spec:
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: conflicter
+  type: ClusterIP
