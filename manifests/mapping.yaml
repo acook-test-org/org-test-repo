@@ -1,0 +1,50 @@
+apiVersion: x.getambassador.io/v3alpha1
+kind: AmbassadorMapping
+metadata:
+  name: cool-mapping
+  namespace: ambassador
+spec:
+  hostname: "*"
+  prefix: /dope/
+  service: cool-service
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cool-service
+  namespace: ambassador
+spec:
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: coolservice
+  type: ClusterIP
+---
+apiVersion: x.getambassador.io/v3alpha1
+kind: AmbassadorMapping
+metadata:
+  name: overlapper
+  namespace: ambassador
+spec:
+  hostname: '*'
+  prefix: /backend/
+  service: other-service
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: other-service
+  namespace: ambassador
+spec:
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: otherservice
+  type: ClusterIP
+---
