@@ -5,7 +5,7 @@ metadata:
   namespace: ambassador
 spec:
   hostname: "*"
-  prefix: /quote-balh/
+  prefix: /quote/
   service: quote
 ---
 apiVersion: v1
