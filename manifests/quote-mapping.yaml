@@ -5,7 +5,7 @@ metadata:
   namespace: ambassador
 spec:
   hostname: "*"
-  prefix: /quote/
+  prefix: /quote-thing/
   service: quote
 ---
 apiVersion: v1
