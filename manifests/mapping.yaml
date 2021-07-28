@@ -3,6 +3,8 @@ kind: AmbassadorMapping
 metadata:
   name: cool-mapping
   namespace: ambassador
+  labels:
+    hi: bye
 spec:
   hostname: "*"
   prefix: /dope/
