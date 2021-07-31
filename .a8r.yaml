@@ -1,6 +1,6 @@
 k8s_config:
   - manifest_path: manifests/prod
     cluster_info:
-      cluster_id: abc123
+      cluster_id: 4eeda77c-0f75-554a-a763-ecd0cd4b2135
       cluster_name: "Production"
 
